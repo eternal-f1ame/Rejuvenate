@@ -36,9 +36,18 @@ PDE image inpainting method considers the gray distribution of image as heat dis
 ### Harmonic Inpainting
 Harmonic Inpainting extending the harmonic function from the boundary of the missing domain into the interior to fill in missing parts of an image. The inpainted image is computed as a solution of the Laplace equation or as a minimiser of the Dirichlet energy over the inpainting domain. It constitutes a smooth and linear interpolation process that roughly fills in missing grey values by averaging the given grey values on the boundary of the inpainting domain.
 
+## MAT Architecture
+
+- A convolutional head to extract tokens
+- A transformer body with five stages of transformer blocks at varying resolutions that use multi-head contextual attention (MCA) to model long-range interactions
+- A convolution-based reconstruction module to upsample the spatial resolution of output tokens
+- A Conv-U-Net to refine high-frequency details
+- A style manipulation module to deliver diverse predictions by modulating the weights of convolutions.
+
 ### Dataset description
-
-
+- CelebA HQ
+- Custom Dataset - Anime Faces
+    Specifications → `Resolution`: 256x256x3   `Number`:  63565    `Type`: Animated Character Faces
 ___
 
 ## Structure
