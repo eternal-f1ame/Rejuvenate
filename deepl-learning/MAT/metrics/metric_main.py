@@ -140,6 +140,7 @@ def is50k(opts):
     mean, std = inception_score.compute_is(opts, num_gen=50000, num_splits=10)
     return dict(is50k_mean=mean, is50k_std=std)
 
+
 #----------------------------------------------------------------------------
 # Legacy metrics.
 

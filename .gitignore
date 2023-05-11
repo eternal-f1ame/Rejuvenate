@@ -164,6 +164,8 @@ cython_debug/
 *.jpg
 *.jpeg
 *.ipynb
+*.DS_Store
+*.pth
 deepl-learning/MAT/results/
 deepl-learning/MAT/pretrained/
 deepl-learning/MAT/test_sets/

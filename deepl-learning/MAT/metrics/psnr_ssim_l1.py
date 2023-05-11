@@ -17,3 +17,4 @@ def compute_psnr(opts, max_real):
     avg_ssim = stats[:, 1].sum() / stats.shape[0]
     avg_l1 = stats[:, 2].sum() / stats.shape[0]
     return avg_psnr, avg_ssim, avg_l1
+
