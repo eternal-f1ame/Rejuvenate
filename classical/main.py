@@ -12,13 +12,12 @@ if __name__ == "__main__":
     image_path = './images/portrait.png'
     mask_path = './images/portrait_mask.png'
     image = cv2.imread(image_path)
-    corrupted_img, mask = create_image_and_mask(
+    _, mask = create_image_and_mask(
         image_path, mask_path, add_noise=False)
 
     # display the original image and corrupted imahge
     cv2.imshow('Original Image', image)
     cv2.imshow('Mask', mask)
-    cv2.imshow('Corrupted Image', corrupted_img)
 
     # parameters
     fidelity = 10
@@ -28,7 +27,7 @@ if __name__ == "__main__":
 
     # perform harmonic inpainting
     inpainted_image = harmonic_inpainting(
-        corrupted_img, mask, fidelity, tol, maxiter, dt)
+        image, mask, fidelity, tol, maxiter, dt)
 
     # display the inpainted image
     cv2.imshow('Harmonic Inpainted Image', inpainted_image)
@@ -42,9 +41,9 @@ if __name__ == "__main__":
     pde = PDE_Inpainter(alpha=1.5, n_iter=100, delta=0.2)
     
     # perform inpainting for each channel
-    inpainted_image_pde = np.zeros_like(corrupted_img)
+    inpainted_image_pde = np.zeros_like(image)
     for i in range(3):
-        inpainted_image_pde[:, :, i] = pde.inpaint(corrupted_img[:, :, i], mask[:, :, i])
+        inpainted_image_pde[:, :, i] = pde.inpaint(image[:, :, i], mask[:, :, i])
 
     # display the inpainted image
     cv2.imshow('PDE Inpainted Image', inpainted_image_pde)
