@@ -29,6 +29,13 @@ ___
 
 ___
 
+## Methods
+### PDE Inpainting based on Image Characteristics
+PDE image inpainting method considers the gray distribution of image as heat distribution and regards the process of image evolution as heat conduction. By establishing and solving the corresponding PDE model to accomplish heat diffusion, image gray will be redistributed . PDE image in painting method interpolates the missing gray values for the initial image through gray diffusion.
+
+### Harmonic Inpainting
+Harmonic Inpainting extending the harmonic function from the boundary of the missing domain into the interior to fill in missing parts of an image. The inpainted image is computed as a solution of the Laplace equation or as a minimiser of the Dirichlet energy over the inpainting domain. It constitutes a smooth and linear interpolation process that roughly fills in missing grey values by averaging the given grey values on the boundary of the inpainting domain.
+
 ### Dataset description
 
 
