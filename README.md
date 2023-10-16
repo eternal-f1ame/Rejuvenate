@@ -1,17 +1,9 @@
 # Rejuvenate: Computer Vision Course Project (2023)
 
 ___
-[Report](/documents/report.pdf) -  [Demo-video]() - [Presentation](/documents/presentation.pdf)
+[Report](/documents/report.pdf)
 
 * This repository contains codes and demonstrations for the Computer Vision Course Project 1 on `Image Inpainting: Analysis, Review, Comparison and Usecases.
-
-___
-
-## Demo video
-
- [![yt](/documents/thumbnail.png)]()
-
-___
 
 ## Installing requirements with conda
 
